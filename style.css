@@ -10,6 +10,18 @@ body {
 	background: #ddd;
 }
 
+
+a {
+  color: white;
+  display: block;
+  text-align: left;
+  margin-top: -50px;
+}
+#img-container {
+  float: left;
+  margin: 5px;
+}
+
 #targetPhoto{
 	float:left;
 	text-align:center;

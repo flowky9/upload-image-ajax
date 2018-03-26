@@ -6,7 +6,28 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <!-- ajax -->
 <script type="text/javascript">
+
+
+
+function deleteImg() {
+	 $('.btn').click(function() {
+      var d = $(this).attr('data-datac');      
+      $.ajax({
+      	type : "get",
+      	url : "doDeleteImage.php",
+      	data : "name="+d,
+      	success : function(data){
+      		$("#targetPhoto").html(data);
+      		deleteImg();
+      	}
+      });
+	});
+}
+
+
+
 $(document).ready(function (e) {
+
 	// jika file telah dipilih
 	$("#uploadForm").on('change',(function(e) {
 		// block submit agar tidak bisa di refresh
@@ -22,13 +43,19 @@ $(document).ready(function (e) {
 			success: function(data)
 		    {
 			$("#targetPhoto").html(data);
+			deleteImg();
+
 		    },
 		  	error: function() 
 	    	{
 	    	} 	        
 	   });
 	}));
+
+
 });
+
+
 </script>
 </head>
 <body>
@@ -45,5 +72,7 @@ $(document).ready(function (e) {
 		</div>
 	</form>
 </div>
+
+
 </body>
 </html>
