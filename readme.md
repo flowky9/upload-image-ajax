@@ -10,3 +10,7 @@
 </ul>
 
 <img src="preview.jpg" alt="">
+
+Sumber : https://www.jurnalweb.com/tutorial-cara-upload-foto-dengan-ajax-dan-php-jquery/
+
+Lalu saya kembangkan dengan menambahkan delete image menggunakan ajax
